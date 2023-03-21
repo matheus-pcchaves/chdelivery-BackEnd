@@ -20,6 +20,11 @@ export class UsersController {
     return this.usersService.create(createUserDto);
   }
 
+  @Get('/email')
+  async findByEmail(@Body() createUserDto: CreateUserDto) {
+    return this.usersService.findByEmail(createUserDto.email);
+  }
+
   @Get()
   findAll() {
     return this.usersService.findAll();
