@@ -42,9 +42,9 @@ export class SolicitationsController {
     return await this.solicitationsService.findAll();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.solicitationsService.findOne(+id);
+  @Get('/user/:id')
+  async findOneByUser(@Param('id') userId: string) {
+    return this.solicitationsService.findByUser(userId);
   }
 
   @Patch(':id')

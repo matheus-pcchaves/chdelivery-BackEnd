@@ -11,7 +11,6 @@ export class SolicitationsService {
     productName,
     category,
     userCpf,
-    tracking,
     address,
   }: CreateSolicitationDto) {
     const solicitation = await this.prisma.solicitations.create({
@@ -20,7 +19,6 @@ export class SolicitationsService {
         productName,
         category,
         userCpf,
-        tracking,
         address,
       },
     });
@@ -36,8 +34,11 @@ export class SolicitationsService {
     return solicitations;
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} solicitation`;
+  async findByUser(userId: string) {
+    const user = await this.prisma.solicitations.findMany({
+      where: { userId },
+    });
+    return user;
   }
 
   update(id: number, updateSolicitationDto: UpdateSolicitationDto) {

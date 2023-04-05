@@ -5,7 +5,7 @@ CREATE TABLE "solicitations" (
     "productName" TEXT NOT NULL,
     "category" TEXT NOT NULL,
     "userCpf" TEXT NOT NULL,
-    "tracking" INTEGER NOT NULL,
+    "tracking" SERIAL NOT NULL,
     "address" TEXT NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 

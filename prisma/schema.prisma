@@ -28,7 +28,7 @@ model Solicitations {
   productName String
   category    String
   userCpf     String
-  tracking    Int
+  tracking    Int      @default(autoincrement())
   address     String
   createdAt   DateTime @default(now())
 
